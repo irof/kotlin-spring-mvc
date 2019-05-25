@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id "org.dddjava.jig-gradle-plugin" version "2019.5.3"
+    id "org.jetbrains.kotlin.jvm" version "1.3.31"
+}
+
+sourceCompatibility = '1.8'
+
+sourceSets.main.resources.srcDirs = ["src/main/java", "src/main/resources"]
+repositories.jcenter()
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE')
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1")
+
+    runtimeOnly("com.h2database:h2")
+}
+
+jigReports.dependsOn(clean, compileKotlin, processResources)
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
