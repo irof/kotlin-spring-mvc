@@ -15,16 +15,18 @@ see: [dddjava/Jig/issues/291](https://github.com/dddjava/Jig/issues/291)
 
 ## JIG
 
+![[ビジネスルール関連図]](sample_business-rule-relation.png)
+
 ### Gradleプラグイン
 
 ```
-gradlew jig
+./gradlew jig
 ```
 
 ### CLI
 
 ```
-gradlew build
-java -jar jig-cli.jar --directory.sources=src/main/java --directory.classes=build/classes/kotlin/main
+./gradlew build
+./java -jar jig-cli.jar --directory.sources=src/main/java --directory.classes=build/classes/kotlin/main
 ```
 
