@@ -27,6 +27,6 @@ see: [dddjava/Jig/issues/291](https://github.com/dddjava/Jig/issues/291)
 
 ```
 ./gradlew build
-./java -jar jig-cli.jar --directory.sources=src/main/java --directory.classes=build/classes/kotlin/main
+./java -jar jig-cli-kotlin.jar --directory.sources=src/main/java --directory.classes=build/classes/kotlin/main
 ```
 
